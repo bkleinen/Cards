@@ -1,0 +1,27 @@
+<h1>Listing index_cards</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Front</th>
+    <th>Back</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @index_cards.each do |index_card| %>
+  <tr>
+    <td><%= index_card.title %></td>
+    <td><%= index_card.front %></td>
+    <td><%= index_card.back %></td>
+    <td><%= link_to 'Show', index_card %></td>
+    <td><%= link_to 'Edit', edit_index_card_path(index_card) %></td>
+    <td><%= link_to 'Destroy', index_card, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Index card', new_index_card_path %>
