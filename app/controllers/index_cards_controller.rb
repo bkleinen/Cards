@@ -20,6 +20,14 @@ class IndexCardsController < ApplicationController
       format.json { render json: @index_card }
     end
   end
+  def back
+    @index_card = IndexCard.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @index_card }
+    end
+  end
 
   # GET /index_cards/new
   # GET /index_cards/new.json

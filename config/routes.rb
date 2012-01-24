@@ -2,6 +2,9 @@ Icards::Application.routes.draw do
   resources :index_cards
 
   resources :topics
+  match 'index_cards/:id/back' => 'index_cards#back', :as => :show_back
+  root :to => 'topics#index'
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
